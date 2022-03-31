@@ -6,7 +6,7 @@ import akka.actor.Props
 class HelloActor(name: String) extends Actor {
   def receive = {
     case "hello" => println("Hello from %s".format(name))
-    case _ => println("%s, huh?".format(name))
+    case _ => println("%s, hi?".format(name))
   }
 }
 
@@ -20,7 +20,8 @@ object Hello extends App {
   // val helloActor = system.actorOf(Props[HelloActor], name = "helloactor")
 
   // HelloActor带构造参数的
-  val helloActor = system.actorOf(Props(new HelloActor("Jimmy")), name = "helloactor")
+  val helloActor = system.actorOf(Props(new HelloActor("rulin")), name = "helloactor")
   helloActor ! "hello"
-  helloActor ! "buenos dias"
+  helloActor ! "anything else"
+
 }
